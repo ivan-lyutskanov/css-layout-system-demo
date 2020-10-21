@@ -1,0 +1,21 @@
+@import "./styles/reset";
+@import "./styles/layout";
+
+// Basic demo styles
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: #333333;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 8rem 2rem;
+  text-align: center;
+}
