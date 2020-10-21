@@ -1,1 +1,43 @@
-// Core layout definition
+// Core layout system
+$breakpoint-container-classname: "container";
+$grid-container-classname: "grid";
+$grid-item-classname: "col";
+
+// Breakpoints (mobile first)
+$media-s-up: "min-width: 576px"; //Small devices (landscape phones, 576px and up)
+$media-m-up: "min-width: 768px"; //Medium devices (tablets, 768px and up)
+$media-l-up: "min-width: 992px"; //Large devices (desktops, 992px and up)
+$media-xl-up: "min-width: 1200px"; //Extra large devices (large desktops, 1200px and up)
+
+.#{$breakpoint-container-classname} {
+  margin: 0 auto;
+  max-width: auto;
+  @media ($media-s-up) {
+    max-width: 540px;
+  }
+  @media ($media-m-up) {
+    max-width: 720px;
+  }
+  @media ($media-l-up) {
+    max-width: 940px;
+  }
+  @media ($media-xl-up) {
+    max-width: 1140px;
+  }
+}
+
+// Columns / Grid container
+.#{$grid-container-classname} {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+// Single column / grid item
+.#{$grid-item-classname} {
+  --columns: 12; /* Number of columns in the grid system */
+  --width: 0; /* Default width of the element */
+
+  flex-basis: calc(var(--width) / var(--columns) * 100%);
+}
